@@ -1,11 +1,20 @@
 {
   "name": "@fanpian/js-library",
   "version": "0.1.0",
+  "author": {
+    "name": "fanpian",
+    "email": "532726345@qq.com"
+  },
+  "description": "js-library的操作库",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name js-library src/index.ts",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanpian/js-library.git"
   },
   "dependencies": {
     "core-js": "^2.6.9",
