@@ -19451,12 +19451,6 @@ module.exports = document && document.documentElement;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var base64Library_namespaceObject = {};
-__webpack_require__.r(base64Library_namespaceObject);
-__webpack_require__.d(base64Library_namespaceObject, "base64ToUint8Array", function() { return base64ToUint8Array; });
-var arrayBufferLibrary_namespaceObject = {};
-__webpack_require__.r(arrayBufferLibrary_namespaceObject);
-__webpack_require__.d(arrayBufferLibrary_namespaceObject, "toBase64", function() { return toBase64; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -19645,7 +19639,7 @@ var es6_typed_uint8_array = __webpack_require__("34ef");
  * @param {boolean=} [subMark=true] subMark 是否截取base64标志.默认值:true.
  * @returns { Uint8Array } Uint8Array字节数组
  */
-var base64ToUint8Array = function base64ToUint8Array(source) {
+var toUint8Array = function toUint8Array(source) {
   var subMark = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
   var copy = source;
   /** base64标志 */
@@ -19691,10 +19685,16 @@ var toBase64 = function toBase64(source) {
 
 
 
+var base64Library = {
+  toUint8Array: toUint8Array
+};
+var arrayBufferLibrary = {
+  toBase64: toBase64
+};
 /* harmony default export */ var src = ({
   arrayToTree: src_arrayToTree,
-  base64Library: base64Library_namespaceObject,
-  arrayBufferLibrary: arrayBufferLibrary_namespaceObject
+  base64Library: base64Library,
+  arrayBufferLibrary: arrayBufferLibrary
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
