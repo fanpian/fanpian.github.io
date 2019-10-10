@@ -6,6 +6,11 @@
     "email": "532726345@qq.com"
   },
   "description": "js-handle的操作库",
+  "main": "dist/js-handle.umd.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name js-handle src/index.ts",
