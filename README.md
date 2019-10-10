@@ -1,3 +1,3 @@
-# js-library
+# js-handle
 
-## arrayToTree 将数组数据转成tree结构数据
+## arrayToTree 将数组数据转成 tree 结构数据
