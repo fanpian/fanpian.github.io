@@ -4,7 +4,7 @@
  * @param {boolean=} [subMark=true] subMark 是否截取base64标志.默认值:true.
  * @returns { Uint8Array } Uint8Array字节数组
  */
-export const base64ToUint8Array = function base64ToUint8Array(
+export const toUint8Array = function toUint8Array(
   source: string,
   subMark: boolean = true
 ): Uint8Array {
