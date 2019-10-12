@@ -19637,10 +19637,16 @@ var es6_typed_uint8_array = __webpack_require__("34ef");
  * base64转成Uint8Array
  * @param {string} str base64字符串
  * @param {boolean=} [subMark=true] subMark 是否截取base64标志.默认值:true.
- * @returns { Uint8Array } Uint8Array字节数组
+ * @returns { Uint8Array } Uint8Array字节数组.如果source不存在则返回空数组
  */
 var toUint8Array = function toUint8Array(source) {
   var subMark = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+  /** source不存在,返回空数组 */
+  if (!source) {
+    return new Uint8Array(0);
+  }
+
   var copy = source;
   /** base64标志 */
 
@@ -19681,7 +19687,87 @@ var toBase64 = function toBase64(source) {
 
   return window.btoa(outputStr);
 };
+// CONCATENATED MODULE: ./src/validate/fixed_phone.ts
+/**
+ *  验证国内座机
+ * @param value 需要验证的字符串
+ */
+var validate = function validate(value) {
+  return /\d{3}-\d{8}|\d{4}-\d{7}/.test(value);
+};
+
+/* harmony default export */ var fixed_phone = ({
+  validate: validate
+});
+// CONCATENATED MODULE: ./src/validate/id_card.ts
+/**
+ *  验证18位身份证号码
+ * @param value 需要验证的字符串
+ */
+var id_card_validate = function validate(value) {
+  return /^\d{6}(18|19|20)\d{2}(0\d|10|11|12)([0-2]\d|30|31)\d{3}(\d|X|x)$/.test(value);
+};
+
+/* harmony default export */ var id_card = ({
+  validate: id_card_validate
+});
+// CONCATENATED MODULE: ./src/validate/phone.ts
+
+
+
+/**
+ * 手机号验证规则
+ */
+var phoneReg = {
+  /**
+   * 中国手机号(严谨), 根据工信部2019年最新公布的手机号段
+   */
+  reg: /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-7|9])|(?:5[0-3|5-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[1|8|9]))\d{8}$/,
+
+  /**
+   * 宽松只要是13,14,15,16,17,18,19开头即可
+   */
+  looseReg: /^(?:(?:\+|00)86)?1[3-9]\d{9}$/,
+
+  /**
+   * 最宽松只要是1开头即可的手机号码
+   */
+  mostLooseReg: /^(?:(?:\+|00)86)?1\d{10}$/
+};
+/**
+ *  验证手机号码字符串
+ * @param value 需要验证的字符串
+ * @param regExpType 正则表达式类型['reg', 'looseReg', 'mostLooseReg'].默认值：mostLooseReg.
+ * @param customRegExp 自定义正则表达式.可选参数
+ */
+
+var phone_validate = function validate(value) {
+  var regExpType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'mostLooseReg';
+  var customRegExp = arguments.length > 2 ? arguments[2] : undefined;
+
+  if (!['reg', 'looseReg', 'mostLooseReg'].includes(regExpType)) {
+    regExpType = 'mostLooseReg';
+  }
+
+  return (customRegExp || phoneReg[regExpType]).test(value);
+};
+
+/* harmony default export */ var phone = ({
+  validate: phone_validate
+});
+// CONCATENATED MODULE: ./src/validate/index.ts
+
+
+
+
+/* harmony default export */ var src_validate = ({
+  CardNo: src,
+  FixedPhone: fixed_phone,
+  IdCard: id_card,
+  PhoneValidate: phone
+});
 // CONCATENATED MODULE: ./src/index.ts
+
 
 
 
@@ -19691,12 +19777,14 @@ var base64Library = {
 var arrayBufferLibrary = {
   toBase64: toBase64
 };
+
 /* harmony default export */ var src = ({
   arrayToTree: src_arrayToTree,
   base64Library: base64Library,
   arrayBufferLibrary: arrayBufferLibrary
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport validate */__webpack_require__.d(__webpack_exports__, "validate", function() { return src_validate; });
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
