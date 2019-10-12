@@ -5,7 +5,6 @@ import { CardNo, FixedPhone, IdCard, PhoneValidate } from './validate';
 
 const base64Library = { toUint8Array };
 const arrayBufferLibrary = { toBase64 };
+const validate = { CardNo, FixedPhone, IdCard, PhoneValidate };
 
-export { CardNo, FixedPhone, IdCard, PhoneValidate };
-
-export { arrayToTree, base64Library, arrayBufferLibrary };
+export default { arrayToTree, base64Library, arrayBufferLibrary, validate };

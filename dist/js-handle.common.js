@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -19446,7 +19446,7 @@ module.exports = document && document.documentElement;
 
 /***/ }),
 
-/***/ "fae3":
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19787,17 +19787,22 @@ var base64Library = {
 var arrayBufferLibrary = {
   toBase64: toBase64
 };
+var src_validate = {
+  CardNo: card_no,
+  FixedPhone: fixed_phone,
+  IdCard: id_card,
+  PhoneValidate: phone
+};
+/* harmony default export */ var src = ({
+  arrayToTree: src_arrayToTree,
+  base64Library: base64Library,
+  arrayBufferLibrary: arrayBufferLibrary,
+  validate: src_validate
+});
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
-/* concated harmony reexport CardNo */__webpack_require__.d(__webpack_exports__, "CardNo", function() { return card_no; });
-/* concated harmony reexport FixedPhone */__webpack_require__.d(__webpack_exports__, "FixedPhone", function() { return fixed_phone; });
-/* concated harmony reexport IdCard */__webpack_require__.d(__webpack_exports__, "IdCard", function() { return id_card; });
-/* concated harmony reexport PhoneValidate */__webpack_require__.d(__webpack_exports__, "PhoneValidate", function() { return phone; });
-/* concated harmony reexport arrayToTree */__webpack_require__.d(__webpack_exports__, "arrayToTree", function() { return src_arrayToTree; });
-/* concated harmony reexport base64Library */__webpack_require__.d(__webpack_exports__, "base64Library", function() { return base64Library; });
-/* concated harmony reexport arrayBufferLibrary */__webpack_require__.d(__webpack_exports__, "arrayBufferLibrary", function() { return arrayBufferLibrary; });
-
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
 
