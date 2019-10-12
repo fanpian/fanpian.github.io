@@ -19760,12 +19760,10 @@ var phone_validate = function validate(value) {
 
 
 
-/* harmony default export */ var src_validate = ({
-  CardNo: src,
-  FixedPhone: fixed_phone,
-  IdCard: id_card,
-  PhoneValidate: phone
-});
+
+
+
+
 // CONCATENATED MODULE: ./src/index.ts
 
 
@@ -19784,7 +19782,10 @@ var arrayBufferLibrary = {
   arrayBufferLibrary: arrayBufferLibrary
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
-/* concated harmony reexport validate */__webpack_require__.d(__webpack_exports__, "validate", function() { return src_validate; });
+/* concated harmony reexport CardNo */__webpack_require__.d(__webpack_exports__, "CardNo", function() { return src; });
+/* concated harmony reexport FixedPhone */__webpack_require__.d(__webpack_exports__, "FixedPhone", function() { return fixed_phone; });
+/* concated harmony reexport IdCard */__webpack_require__.d(__webpack_exports__, "IdCard", function() { return id_card; });
+/* concated harmony reexport PhoneValidate */__webpack_require__.d(__webpack_exports__, "PhoneValidate", function() { return phone; });
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
