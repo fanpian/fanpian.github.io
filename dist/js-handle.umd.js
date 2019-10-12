@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -19455,7 +19455,7 @@ module.exports = document && document.documentElement;
 
 /***/ }),
 
-/***/ "fb15":
+/***/ "fae3":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19696,17 +19696,29 @@ var toBase64 = function toBase64(source) {
 
   return window.btoa(outputStr);
 };
+// CONCATENATED MODULE: ./src/validate/card_no.ts
+/**
+ *  银行卡号（10到30位, 覆盖对公/私账户)
+ * @param value 需要验证的字符串
+ */
+var validate = function validate(value) {
+  return /^[1-9]\d{9,29}$/.test(value);
+};
+
+/* harmony default export */ var card_no = ({
+  validate: validate
+});
 // CONCATENATED MODULE: ./src/validate/fixed_phone.ts
 /**
  *  验证国内座机
  * @param value 需要验证的字符串
  */
-var validate = function validate(value) {
+var fixed_phone_validate = function validate(value) {
   return /\d{3}-\d{8}|\d{4}-\d{7}/.test(value);
 };
 
 /* harmony default export */ var fixed_phone = ({
-  validate: validate
+  validate: fixed_phone_validate
 });
 // CONCATENATED MODULE: ./src/validate/id_card.ts
 /**
@@ -19785,19 +19797,16 @@ var arrayBufferLibrary = {
   toBase64: toBase64
 };
 
-/* harmony default export */ var src = ({
-  arrayToTree: src_arrayToTree,
-  base64Library: base64Library,
-  arrayBufferLibrary: arrayBufferLibrary
-});
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
-/* concated harmony reexport CardNo */__webpack_require__.d(__webpack_exports__, "CardNo", function() { return src; });
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
+/* concated harmony reexport CardNo */__webpack_require__.d(__webpack_exports__, "CardNo", function() { return card_no; });
 /* concated harmony reexport FixedPhone */__webpack_require__.d(__webpack_exports__, "FixedPhone", function() { return fixed_phone; });
 /* concated harmony reexport IdCard */__webpack_require__.d(__webpack_exports__, "IdCard", function() { return id_card; });
 /* concated harmony reexport PhoneValidate */__webpack_require__.d(__webpack_exports__, "PhoneValidate", function() { return phone; });
+/* concated harmony reexport arrayToTree */__webpack_require__.d(__webpack_exports__, "arrayToTree", function() { return src_arrayToTree; });
+/* concated harmony reexport base64Library */__webpack_require__.d(__webpack_exports__, "base64Library", function() { return base64Library; });
+/* concated harmony reexport arrayBufferLibrary */__webpack_require__.d(__webpack_exports__, "arrayBufferLibrary", function() { return arrayBufferLibrary; });
 
-
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
 
