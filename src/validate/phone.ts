@@ -28,7 +28,11 @@ const phoneReg: PhoneRegIndex = {
  * @param regExpType 正则表达式类型['reg', 'looseReg', 'mostLooseReg'].默认值：mostLooseReg.
  * @param customRegExp 自定义正则表达式.可选参数
  */
-const validate = (value: string, regExpType: string = 'mostLooseReg', customRegExp?: RegExp) => {
+const validate = (
+  value: string,
+  regExpType: string = 'mostLooseReg',
+  customRegExp?: RegExp
+): boolean => {
   if (!['reg', 'looseReg', 'mostLooseReg'].includes(regExpType)) {
     regExpType = 'mostLooseReg';
   }

@@ -1,51 +1,49 @@
 {
   "name": "@fanpian/js-handle",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name js-handle src/index.ts",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.152",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-plugin-typescript": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "typescript": "~3.9.2",
+    "vue-template-compiler": "^2.6.11"
+  },
   "author": {
     "name": "fanpian",
     "email": "532726345@qq.com"
   },
   "description": "js-handle的操作库",
+  "license": "MIT",
+  "private": false,
   "main": "dist/js-handle.umd.min.js",
   "files": [
     "dist",
     "src"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name js-handle src/index.ts",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
-  },
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:fanpian/js-handle.git"
-  },
-  "dependencies": {
-    "core-js": "^2.6.9",
-    "lodash": "^4.17.15",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/lodash": "^4.14.144",
-    "@types/mocha": "^5.2.7",
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-typescript": "^3.11.0",
-    "@vue/cli-plugin-unit-mocha": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "@vue/eslint-config-prettier": "^4.0.1",
-    "@vue/eslint-config-typescript": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/fanpian"
   }
 }

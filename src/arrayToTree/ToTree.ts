@@ -15,7 +15,7 @@ const extendArray = (source: Array<any>, option: IOption) => {
   });
 
   return filterDelete.map(item => {
-    let target = extend({}, item);
+    const target = extend({}, item);
     target[option.idTo] = item[option.idFrom];
     target[option.labelTo] = item[option.labelFrom];
     target[option.parentTo] = item[option.parentFrom];
@@ -36,8 +36,12 @@ const extendArray = (source: Array<any>, option: IOption) => {
  * @param {Object} parentNode 父节点对象
  * @param {Object} option 配置对象
  */
-const toTree = function toTree(source: Array<any>, parentNode: any, option: IOption) {
-  var childrens = source.filter(filter => {
+const toTree = function toTree(
+  source: Array<any>,
+  parentNode: any,
+  option: IOption
+) {
+  const childrens = source.filter(filter => {
     return filter[option.parentTo] === parentNode[option.idTo];
   });
 
@@ -63,9 +67,9 @@ const toTree = function toTree(source: Array<any>, parentNode: any, option: IOpt
  */
 const arrayToTree = (source: Array<any>, option: IOption) => {
   const defaultOption = new DefaultOption();
-  var options = extend(defaultOption, option);
+  const options = extend(defaultOption, option);
 
-  var node = extendArray(source, options);
+  const node = extendArray(source, options);
   return node
     .filter(filter => {
       return options.rootParentVal.includes(filter[options.parentTo]);
