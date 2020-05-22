@@ -6,8 +6,8 @@ import arrayToTree from '../arrayToTree';
  * @description 从URL中解析参数
  */
 const getParams = (url: string) => {
-  if (!url || url.indexOf('?') <= 0) {
-    return {} as DynamicIndex;
+  if (!url) {
+    return {};
   }
   const match = url.match(/([^?=&]+)(=([^&]*))/g) || [];
   return match.reduce((acc, current) => {
@@ -17,6 +17,15 @@ const getParams = (url: string) => {
     acc[key] = val;
     return acc;
   }, {} as DynamicIndex);
+};
+
+/**
+ * 获取指定参数的值
+ */
+const getParamByName = (url: string, name: string) => {
+  if (!name) return null;
+  const params = getParams(url);
+  return params[name];
 };
 
 /**
@@ -64,6 +73,7 @@ const byteArrayToBase64 = (source: ArrayBuffer) => {
 const until = {
   arrayToTree,
   getParams,
+  getParamByName,
   base64ToUint8Array,
   byteArrayToBase64
 };

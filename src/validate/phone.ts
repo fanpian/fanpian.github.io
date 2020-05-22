@@ -30,7 +30,7 @@ const phoneReg: PhoneRegIndex = {
  */
 const validate = (
   value: string,
-  regExpType: string = 'mostLooseReg',
+  regExpType = 'mostLooseReg',
   customRegExp?: RegExp
 ): boolean => {
   if (!['reg', 'looseReg', 'mostLooseReg'].includes(regExpType)) {

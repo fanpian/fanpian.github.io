@@ -1,13 +1,12 @@
 import { extend } from 'lodash';
-import { IOption } from './IOption';
-import { DefaultOption } from './DefaultOption';
+import { Options, DefaultOption } from '@/types/ArrayToTree/ArrayToTreeOption';
 
 /**
  * 将原数组的字段扩展成Tree必须要的字段
  * @param {Array} source 数据源
  * @param {Object} option 配置对象
  */
-const extendArray = (source: Array<any>, option: IOption) => {
+const extendArray = (source: Array<any>, option: Options) => {
   const filterDelete = source.filter(item => {
     return option.deleteNodes.some(function some(nodeKey) {
       return nodeKey !== item[option.idFrom];
@@ -39,7 +38,7 @@ const extendArray = (source: Array<any>, option: IOption) => {
 const toTree = function toTree(
   source: Array<any>,
   parentNode: any,
-  option: IOption
+  option: Options
 ) {
   const childrens = source.filter(filter => {
     return filter[option.parentTo] === parentNode[option.idTo];
@@ -65,7 +64,7 @@ const toTree = function toTree(
  * @param source 源数据
  * @param option 配置项
  */
-const arrayToTree = (source: Array<any>, option: IOption) => {
+const arrayToTree = (source: Array<any>, option: Options) => {
   const defaultOption = new DefaultOption();
   const options = extend(defaultOption, option);
 

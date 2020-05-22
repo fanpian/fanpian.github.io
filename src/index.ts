@@ -1,4 +1,3 @@
-import arrayToTree from './arrayToTree';
 import validate from './validate';
 import until from './library/until';
 
