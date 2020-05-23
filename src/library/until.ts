@@ -1,4 +1,4 @@
-import { DynamicIndex } from '@/types';
+import { DynamicIndex } from '@/GenerateType';
 import arrayToTree from '../arrayToTree';
 
 /**

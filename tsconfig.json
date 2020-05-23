@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": true,
+    "declarationDir": "src/types",
     "baseUrl": ".",
     "types": ["webpack-env", "mocha", "chai"],
     "paths": {

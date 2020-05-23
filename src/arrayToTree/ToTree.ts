@@ -1,5 +1,8 @@
 import { extend } from 'lodash';
-import { Options, DefaultOption } from '@/types/ArrayToTree/ArrayToTreeOption';
+import {
+  Options,
+  DefaultOption
+} from '@/GenerateType/ArrayToTree/ArrayToTreeOption';
 
 /**
  * 将原数组的字段扩展成Tree必须要的字段

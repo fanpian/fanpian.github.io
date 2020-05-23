@@ -1,4 +1,4 @@
-import { Options } from '@/types/ArrayToTree/ArrayToTreeOption';
+import { Options } from '@/GenerateType/ArrayToTree/ArrayToTreeOption';
 /**
  * 将数组转换成Tree节点
  * @param source 源数据
