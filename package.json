@@ -1,7 +1,6 @@
 {
   "name": "@fanpian/js-handle",
-  "version": "1.0.6",
-  "private": false,
+  "version": "1.0.7",
   "description": "js-handle的操作库",
   "author": {
     "name": "fanpian",
