@@ -1,11 +1,10 @@
-import { DynamicIndex } from '@/GenerateType';
-import arrayToTree from '../arrayToTree';
+import { DynamicIndex } from './DynamicIndex';
 
 /**
  * @param {String} url
  * @description 从URL中解析参数
  */
-const getParams = (url: string) => {
+export const getParams = (url: string) => {
   if (!url) {
     return {};
   }
@@ -22,7 +21,7 @@ const getParams = (url: string) => {
 /**
  * 获取指定参数的值
  */
-const getParamByName = (url: string, name: string) => {
+export const getParamByName = (url: string, name: string) => {
   if (!name) return null;
   const params = getParams(url);
   return params[name];
@@ -34,7 +33,7 @@ const getParamByName = (url: string, name: string) => {
  * @param {boolean=} [subMark=true] subMark 是否截取base64标志.默认值:true.
  * @returns Uint8Array字节数组.如果source不存在则返回空数组
  */
-const base64ToUint8Array = (source: string, subMark = true) => {
+export const base64ToUint8Array = (source: string, subMark = true) => {
   /** source不存在,返回空数组 */
   if (!source) {
     return new Uint8Array(0);
@@ -60,7 +59,7 @@ const base64ToUint8Array = (source: string, subMark = true) => {
  * 将字节数组转成base64字符串
  * @param {ArrayBuffer} source 字节数组
  */
-const byteArrayToBase64 = (source: ArrayBuffer) => {
+export const byteArrayToBase64 = (source: ArrayBuffer) => {
   const bytes = new Uint8Array(source);
   const length = bytes.length;
   let outputStr = '';
@@ -70,12 +69,11 @@ const byteArrayToBase64 = (source: ArrayBuffer) => {
   return window.btoa(outputStr);
 };
 
-const until = {
-  arrayToTree,
-  getParams,
-  getParamByName,
-  base64ToUint8Array,
-  byteArrayToBase64
+/**
+ * 验证字符串是否符合规则
+ * @param reg 正则表达式
+ * @param value 验证的字符串
+ */
+export const validate = (reg: RegExp, value: string) => {
+  return true;
 };
-
-export default until;

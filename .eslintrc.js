@@ -39,6 +39,8 @@ module.exports = {
     quotes: [2, 'single'],
     'use-isnan': 2,
     indent: ['error', 2, { SwitchCase: 1 }],
+    // 要求或禁止使用拖尾逗号
+    'comma-dangle': ['error', 'never'],
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/camelcase': 0
   },

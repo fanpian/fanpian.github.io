@@ -1,8 +1,5 @@
-import { extend } from 'lodash';
-import {
-  Options,
-  DefaultOption
-} from '@/GenerateType/ArrayToTree/ArrayToTreeOption';
+import { cloneDeep } from 'lodash';
+import { Options, DefaultOption } from './ArrayToTreeOption';
 
 /**
  * 将原数组的字段扩展成Tree必须要的字段
@@ -17,7 +14,7 @@ const extendArray = (source: Array<any>, option: Options) => {
   });
 
   return filterDelete.map(item => {
-    const target = extend({}, item);
+    const target = cloneDeep(item);
     target[option.idTo] = item[option.idFrom];
     target[option.labelTo] = item[option.labelFrom];
     target[option.parentTo] = item[option.parentFrom];
@@ -69,7 +66,7 @@ const toTree = function toTree(
  */
 const arrayToTree = (source: Array<any>, option: Options) => {
   const defaultOption = new DefaultOption();
-  const options = extend(defaultOption, option);
+  const options = cloneDeep(Object.assign({}, defaultOption, option));
 
   const node = extendArray(source, options);
   return node
