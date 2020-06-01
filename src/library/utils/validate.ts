@@ -48,6 +48,38 @@ export interface PhoneValidate {
 }
 
 /**
+ * IP验证类型
+ */
+export enum IpValidateType {
+  /**
+   * 仅IpV4
+   */
+  v4 = 0,
+
+  /**
+   * 仅IPV6
+   */
+  v6 = 1,
+
+  /**
+   * IPV4或者IPV6
+   */
+  v4_or_v6 = 2
+}
+
+/**
+ * IP地址的验证接口
+ */
+export interface IpValidate {
+  /**
+   *
+   * @param value 需要验证的值
+   * @param ipValidateType IP验证类型。0：仅IPV4；1：仅IPV6;2：V4 or V6
+   */
+  validate(value: string, ipValidateType?: IpValidateType): boolean;
+}
+
+/**
  * 使用正则表达式验证字符串
  * @param reg 正则表达式
  * @param value 需要验证的字符串值

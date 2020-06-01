@@ -10,16 +10,13 @@ import {
  */
 const phone: PhoneValidate = {
   validate: (value: string, phoneValidateType?: PhoneValidateType) => {
-    const phoneTemp = PhoneValidateType.loose;
-    const temp = PhoneValidateType[phoneTemp];
-
-    const phoneType = (PhoneValidateType[phoneValidateType || 0] ||
-      0) as number;
-    if (phoneType === 0) {
+    const phoneType =
+      PhoneValidateType[phoneValidateType || PhoneValidateType.sober];
+    if (phoneType === PhoneValidateType[PhoneValidateType.sober]) {
       return sober_phone_regexp.test(value);
-    } else if (phoneType === 1) {
+    } else if (phoneType === PhoneValidateType[PhoneValidateType.loose]) {
       return loose_phone_regexp.test(value);
-    } else if (phoneType === 2) {
+    } else if (phoneType === PhoneValidateType[PhoneValidateType.mostLoose]) {
       return most_loose_phone_regexp.test(value);
     }
     return sober_phone_regexp.test(value);

@@ -1,4 +1,3 @@
-import { cloneDeep } from 'lodash';
 import { Options, DefaultOption } from './ArrayToTreeOption';
 
 /**
@@ -14,18 +13,17 @@ const extendArray = (source: Array<any>, option: Options) => {
   });
 
   return filterDelete.map(item => {
-    const target = cloneDeep(item);
-    target[option.idTo] = item[option.idFrom];
-    target[option.labelTo] = item[option.labelFrom];
-    target[option.parentTo] = item[option.parentFrom];
-    target[option.childTo] = [];
+    item[option.idTo] = item[option.idFrom];
+    item[option.labelTo] = item[option.labelFrom];
+    item[option.parentTo] = item[option.parentFrom];
+    item[option.childTo] = [];
     const disabledItem = option.disabledNodes.find(function find(node) {
-      return node.key === target[option.idTo];
+      return node.key === item[option.idTo];
     });
     if (disabledItem) {
-      target[disabledItem.fieldName] = disabledItem.fieldVaule;
+      item[disabledItem.fieldName] = disabledItem.fieldVaule;
     }
-    return target;
+    return item;
   });
 };
 
@@ -61,12 +59,13 @@ const toTree = function toTree(
 
 /**
  * 将数组转换成Tree节点
+ * 因为该操作会改变对象属性，请务必在传参前进行深度拷贝
  * @param source 源数据
  * @param option 配置项
  */
 const arrayToTree = (source: Array<any>, option: Options) => {
   const defaultOption = new DefaultOption();
-  const options = cloneDeep(Object.assign({}, defaultOption, option));
+  const options = Object.assign({}, defaultOption, option);
 
   const node = extendArray(source, options);
   return node

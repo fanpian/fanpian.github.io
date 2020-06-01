@@ -35,3 +35,19 @@ npm publish --access=public --registry http://registry.npmjs.org
 ### 验证身份证
 
 `validate.idCard`
+
+### 验证电子邮箱
+
+`validate.email`
+
+### 验证 IP 地址
+
+0:仅验证 IPV4
+1:仅验证 IPV6
+2:IPV4 或 IPV6
+
+`validate.ip`
+
+### 验证 MAC 地址
+
+`validate.mac`
