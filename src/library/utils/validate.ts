@@ -1,10 +1,3 @@
-/**
- * 验证方法
- */
-interface ValidateMethod {
-  (reg: RegExp, value: string): boolean;
-}
-
 export interface Validate {
   /**
    * 验证值是否通过;
@@ -84,7 +77,7 @@ export interface IpValidate {
  * @param reg 正则表达式
  * @param value 需要验证的字符串值
  */
-const validate: ValidateMethod = (reg: RegExp, value: string) => {
+const validate = (reg: RegExp, value: string) => {
   return reg.test(value);
 };
 
