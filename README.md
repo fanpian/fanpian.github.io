@@ -8,15 +8,17 @@ npm publish --access=public --registry http://registry.npmjs.org
 
 ### 将数组数据转成 tree 结构数据
 
+**因为该会在对象上添加数据，所以请务必在操作前将数据进行深度拷贝**
+
 `until.arrayToTree`
 
 ## 将 base64 转成 Unit8 数组
 
-`base64Library.toUint8Array`
+`until.base64ToUint8Array`
 
 ## 将 Unit8 数组转成 Base64 字符串
 
-`arrayBufferLibrary.toBase64`
+`until.byteArrayToBase64`
 
 ## 验证 validate
 
