@@ -16,19 +16,17 @@ module.exports = {
         opts.happyPackMode = false;
         return opts;
       });
-    if (process.env.NODE_ENV === 'production') {
-      // 打包时去掉console,debug
-      config.optimization.minimizer('terser').tap(args => {
-        args[0].terserOptions.compress.warnings = true;
-        args[0].terserOptions.compress.drop_console = true;
-        args[0].terserOptions.compress.drop_debugger = true;
-        args[0].terserOptions.compress.pure_funcs = [
-          'console.log',
-          'console.table'
-        ];
-        return args;
-      });
-    }
+    // 打包时去掉console,debug
+    config.optimization.minimizer('terser').tap(args => {
+      args[0].terserOptions.compress.warnings = true;
+      args[0].terserOptions.compress.drop_console = true;
+      args[0].terserOptions.compress.drop_debugger = true;
+      args[0].terserOptions.compress.pure_funcs = [
+        'console.log',
+        'console.table'
+      ];
+      return args;
+    });
   },
   // 好像是多线程吧。用于在打包时关掉，则可以生成d.ts申明文件,否则报错
   parallel: false
