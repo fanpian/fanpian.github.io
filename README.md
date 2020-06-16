@@ -53,3 +53,11 @@ npm publish --access=public --registry http://registry.npmjs.org
 ### 验证 MAC 地址
 
 `validate.mac`
+
+## 计算曲线上的坐标点
+
+`calcCurvePoint`
+
+## 计算贝塞尔曲线上的点
+
+`getBasisPoint`
